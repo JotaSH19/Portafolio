@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastián Hernández - Desarrollador Web</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (para iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ScrollReveal (para animaciones al scroll) -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <style>
+    /* Aplicamos la fuente Inter a todo el cuerpo */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Offset para el 'anchor link' debido al header pegajoso (sticky) */
+    /* El valor (4rem o 64px) debe coincidir con la altura de tu navbar (py-4 -> 1rem + 1rem = 2rem + padding = ~4rem) */
+    /* Ajusta 'pt-24' (padding-top) si cambias la altura del nav */
+    html {
+      scroll-padding-top: 6rem; /* Ajusta esto a la altura de tu nav */
+    }
+
+    /* Estilo sutil para la sombra de las tarjetas */
+    .service-card:hover, .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200 antialiased">
+
+<!-- ==== Header / Navbar ==== -->
+<nav class="bg-gray-800/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+  <div class="container mx-auto px-6 py-5">
+    <div class="flex justify-between items-center">
+      <!-- Logo / Nombre -->
+      <a href="#home" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">
+        Sebastián H.
+      </a>
+
+      <!-- Links de Navegación (Desktop) -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-300 hover:text-blue-400 transition duration-300">Inicio</a>
+        <a href="#sobre-mi" class="text-gray-300 hover:text-blue-400 transition duration-300">Sobre Mí</a>
+        <a href="#servicios" class="text-gray-300 hover:text-blue-400 transition duration-300">Servicios</a>
+        <a href="#portafolio" class="text-gray-300 hover:text-blue-400 transition duration-300">Portafolio</a>
+        <a href="#contacto" class="bg-blue-500 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-600 transition duration-300">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Botón de Menú Móvil -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col items-center mt-4 space-y-4">
+      <a href="#home" class="block text-gray-300 hover:text-blue-400 transition duration-300">Inicio</a>
+      <a href="#sobre-mi" class="block text-gray-300 hover:text-blue-400 transition duration-300">Sobre Mí</a>
+      <a href="#servicios" class="block text-gray-300 hover:text-blue-400 transition duration-300">Servicios</a>
+      <a href="#portafolio" class="block text-gray-300 hover:text-blue-400 transition duration-300">Portafolio</a>
+      <a href="#contacto" class="block bg-blue-500 text-white w-full text-center px-5 py-2 rounded-full font-medium hover:bg-blue-600 transition duration-300">
+        Contacto
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==== Sección Hero (Inicio) ==== -->
+<header id="home" class="min-h-screen flex items-center bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/3B82F6?text=Fondo+Abstracto');">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Puedes reemplazar este placeholder con tu foto -->
+    <img src="https://placehold.co/160x160/3B82F6/FFFFFF?text=SH&font=inter" alt="Foto de Sebastián Hernández"
+         class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-blue-400 shadow-2xl">
+
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4">
+      Sebastián Hernández
+    </h1>
+    <p class="text-2xl md:text-3xl text-blue-300 font-medium mb-10">
+      Creador de Páginas Web & Desarrollador Frontend
+    </p>
+    <a href="#portafolio" class="bg-blue-500 text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-blue-600 transition duration-300 shadow-lg">
+      Ver mi Trabajo
+    </a>
+  </div>
+</header>
+
+<!-- ==== Sección Sobre Mí ==== -->
+<section id="sobre-mi" class="py-24 bg-gray-800">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-white mb-6">Sobre Mí</h2>
+      <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+        ¡Hola! Soy Sebastián. Un apasionado desarrollador web con base en Colombia. Me especializo en crear sitios web modernos, responsivos y optimizados que no solo se ven increíbles, sino que también ofrecen una experiencia de usuario excepcional. Mi objetivo es convertir tus ideas en soluciones digitales funcionales y atractivas.
+      </p>
+
+      <!-- Sección de Habilidades -->
+      <h3 class="text-2xl font-semibold text-white mb-8">Mis Habilidades</h3>
+      <div class="flex flex-wrap justify-center gap-6 text-4xl text-gray-400">
+        <div class="flex flex-col items-center p-4" title="HTML5">
+          <i class="fab fa-html5 text-orange-500"></i>
+          <span class="text-sm mt-2">HTML5</span>
+        </div>
+        <div class="flex flex-col items-center p-4" title="CSS3">
+          <i class="fab fa-css3-alt text-blue-500"></i>
+          <span class="text-sm mt-2">CSS3</span>
+        </div>
+        <div class="flex flex-col items-center p-4" title="JavaScript">
+          <i class="fab fa-js-square text-yellow-400"></i>
+          <span class="text-sm mt-2">JavaScript</span>
+        </div>
+        <div class="flex flex-col items-center p-4" title="React">
+          <i class="fab fa-react text-blue-400"></i>
+          <span class="text-sm mt-2">React</span>
+        </div>
+        <div class="flex flex-col items-center p-4" title="Tailwind CSS">
+          <i class="fab fa-tailwind text-cyan-400"></i>
+          <span class="text-sm mt-2">Tailwind</span>
+        </div>
+        <div class="flex flex-col items-center p-4" title="Git">
+          <i class="fab fa-git-alt text-orange-600"></i>
+          <span class="text-sm mt-2">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== Sección Servicios ==== -->
+<section id="servicios" class="py-24">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-white mb-16 text-center">Mis Servicios</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- Tarjeta de Servicio 1 -->
+      <div class="service-card bg-gray-800 p-8 rounded-2xl shadow-xl transition-all duration-300">
+        <div class="text-5xl text-blue-400 mb-6">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Diseño Web UI/UX</h3>
+        <p class="text-gray-400">
+          Diseño de interfaces atractivas y fáciles de usar, enfocadas en la experiencia del usuario (UI/UX) para que tus visitantes se queden.
+        </p>
+      </div>
+
+      <!-- Tarjeta de Servicio 2 -->
+      <div class="service-card bg-gray-800 p-8 rounded-2xl shadow-xl transition-all duration-300">
+        <div class="text-5xl text-blue-400 mb-6">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Desarrollo Frontend</h3>
+        <p class="text-gray-400">
+          Transformo diseños en código HTML, CSS y JavaScript. Sitios web rápidos, interactivos y 100% responsivos (adaptables a móviles).
+        </p>
+      </div>
+
+      <!-- Tarjeta de Servicio 3 -->
+      <div class="service-card bg-gray-800 p-8 rounded-2xl shadow-xl transition-all duration-300">
+        <div class="text-5xl text-blue-400 mb-6">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Optimización y SEO</h3>
+        <p class="text-gray-400">
+          Mejora de la velocidad de carga de tu web y optimización SEO básica para ayudarte a posicionar mejor en motores de búsqueda como Google.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==== Sección Portafolio ==== -->
+<section id="portafolio" class="py-24 bg-gray-800">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-white mb-16 text-center">Mi Portafolio</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Proyecto 1 -->
+      <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-xl transition-all duration-300 group">
+        <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Proyecto+1" alt="Imagen del Proyecto 1" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Nombre del Proyecto</h3>
+          <p class="text-gray-400 mb-4">Una breve descripción de este proyecto, las tecnologías usadas y el objetivo del cliente.</p>
+          <a href="#" class="text-blue-400 font-medium hover:text-blue-300 transition duration-300">
+            Ver Proyecto &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-xl transition-all duration-300 group">
+        <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Proyecto+2" alt="Imagen del Proyecto 2" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">E-commerce de Ropa</h3>
+          <p class="text-gray-400 mb-4">Desarrollo de una tienda en línea con carrito de compras y pasarela de pago (simulada).</p>
+          <a href="#" class="text-blue-400 font-medium hover:text-blue-300 transition duration-300">
+            Ver Proyecto &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-xl transition-all duration-300 group">
+        <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Proyecto+3" alt="Imagen del Proyecto 3" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Landing Page Startup</h3>
+          <p class="text-gray-400 mb-4">Página de aterrizaje para una startup de tecnología, enfocada en la captación de leads.</p>
+          <a href="#" class="text-blue-400 font-medium hover:text-blue-300 transition duration-300">
+            Ver Proyecto &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Añade más proyectos aquí si es necesario -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ==== Sección Contacto ==== -->
+<section id="contacto" class="py-24">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-white mb-6">Hablemos</h2>
+    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+      ¿Tienes un proyecto en mente o buscas un desarrollador para tu equipo?
+      ¡Me encantaría saber de ti!
+    </p>
+
+    <a href="mailto:jsebash17@gmail.com" class="bg-blue-500 text-white text-lg font-semibold py-3 px-10 rounded-full hover:bg-blue-600 transition duration-300 shadow-lg">
+      Enviar un Email
+    </a>
+
+    <!-- Redes Sociales -->
+    <div class="flex justify-center space-x-8 mt-12 text-3xl">
+      <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="text-gray-500 hover:text-blue-400 transition duration-300" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/JotaSH19∫ target="_blank" class="text-gray-500 hover:text-white transition duration-300" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/tu-usuario" target="_blank" class="text-gray-500 hover:text-cyan-400 transition duration-300" title="Twitter/X">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==== Footer ==== -->
+<footer class="py-10 bg-gray-800 border-t border-gray-700">
+  <div class="container mx-auto px-6 text-center text-gray-500">
+    <p>&copy; <span id="current-year"></span> Sebastián Hernández. Todos los derechos reservados.</p>
+    <p class="text-sm mt-2">Hecho con <i class="fas fa-heart text-red-500"></i> y código.</p>
+  </div>
+</footer>
+
+
+<!-- ==== JavaScript ==== -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Menú Móvil ---
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+      // Cambiar ícono de hamburguesa a 'X' y viceversa
+      if (mobileMenu.classList.contains('hidden')) {
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      } else {
+        menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+      }
+    });
+
+    // --- Cerrar menú móvil al hacer clic en un enlace ---
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // --- Scroll Suave (para los enlaces del Nav de Desktop) ---
+    // El 'scroll-smooth' en <html> maneja esto, pero esto es un fallback por si acaso
+    // y para asegurar que funciona en todos los navegadores.
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          try {
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          } catch (error) {
+            console.warn('Elemento de ancla no encontrado:', this.getAttribute('href'));
+          }
+        }
+      });
+    });
+
+    // --- Año Actual en Footer ---
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // --- Animaciones con ScrollReveal ---
+    // Configuración general
+    const sr = ScrollReveal({
+      distance: '60px',
+      duration: 2000,
+      delay: 200,
+      reset: false // Poner 'true' si quieres que la animación se repita al volver a hacer scroll
+    });
+
+    // Aplicar animaciones
+    sr.reveal('header h1, header p, header a', { origin: 'top', interval: 300 });
+    sr.reveal('header img', { origin: 'top', scale: 0.8 });
+
+    sr.reveal('section h2, #sobre-mi p', { origin: 'bottom' });
+
+    sr.reveal('#sobre-mi .flex-wrap > div', { origin: 'bottom', interval: 150 });
+
+    sr.reveal('.service-card', { origin: 'bottom', interval: 200 });
+
+    sr.reveal('.project-card', { origin: 'bottom', interval: 200, scale: 0.9 });
+
+    sr.reveal('#contacto p, #contacto a', { origin: 'bottom', interval: 200 });
+    sr.reveal('#contacto .flex a', { origin: 'bottom', interval: 200, delay: 500 });
+
+  });
+</script>
+
+</body>
+</html>
